@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_relieve_device"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.iftech.car.trace.ui.activity.RelieveDeviceActivity">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/toolbar_back" />
+    <LinearLayout
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/textview_bottom_border_gray">
+                <AutoCompleteTextView
+                    android:id="@+id/inputValue"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:paddingLeft="10dp"
+                    android:hint="请输入VIN码或IMEI码"
+                    android:gravity="center"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textSize="14sp"/>
+                <ImageView
+                    android:id="@+id/scanImg"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/scan_red"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_below="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/commitRelieve"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:text="@string/ensure_relieve"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_button_red"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"/>
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/ll_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#50323232"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/spinner_0"
+                android:visibility="visible" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:gravity="center_vertical"
+                android:text="正在解绑..."
+                android:textColor="#fff"
+                android:textSize="18dp" />
+    </LinearLayout>
+</RelativeLayout>

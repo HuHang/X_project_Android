@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daasuu.bl.BubbleLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        app:bl_arrowDirection="bottom"
+        app:bl_arrowHeight="8dp"
+        app:bl_arrowPosition="80dp"
+        app:bl_arrowWidth="18dp"
+        app:bl_cornersRadius="6dp"
+        app:bl_strokeWidth="0dp">
+
+    <TextView
+            android:id="@+id/infoTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="4dp"
+            android:textColor="@color/black" />
+
+</com.daasuu.bl.BubbleLayout>

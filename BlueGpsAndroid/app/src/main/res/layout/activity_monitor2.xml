@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_device_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iftech.car.trace.ui.activity.Monitor2Activity">
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="40dp"
+        sothree:umanoParallaxOffset="100dp"
+        sothree:umanoScrollableView="@+id/recycler_view"
+        sothree:umanoShadowHeight="4dp"
+        tools:context="com.iftech.car.trace.ui.activity.MonitorActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_circle">
+
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/arrow_left_red" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/shopCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:background="#99BF1F1E"
+                        android:gravity="center"
+                        android:minWidth="70dp"
+                        android:padding="2dp"
+                        android:text="商店数:0"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/carCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#99BF1F1E"
+                        android:gravity="center"
+                        android:minWidth="70dp"
+                        android:padding="2dp"
+                        android:text="车辆数:0"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/spreadStatusLL"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/spreadStatus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/monitor_close" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+                    android:id="@+id/swipeToLoadLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eeeeee">
+
+                    <com.iftech.car.widget.RefreshHeaderView
+                        android:id="@id/swipe_refresh_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center" />
+
+                    <com.iftech.car.widget.PinnedHeaderExpandableListView
+                        android:id="@+id/swipe_target"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null" />
+
+                    <com.iftech.car.widget.LoadMoreFooterView
+                        android:id="@id/swipe_load_more_footer"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="center" />
+
+                </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
+                <include
+                    android:id="@+id/id_empty_view"
+                    layout="@layout/layout_empty_view" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>
+

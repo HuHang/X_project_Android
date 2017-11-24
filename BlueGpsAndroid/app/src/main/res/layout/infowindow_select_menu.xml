@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daasuu.bl.BubbleLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#00ffffff"
+        app:bl_arrowDirection="top"
+        app:bl_arrowHeight="8dp"
+        app:bl_arrowPosition="40dp"
+        app:bl_arrowWidth="18dp"
+        app:bl_cornersRadius="6dp"
+        app:bl_strokeWidth="1dp">
+    <ListView
+        android:id="@+id/menu_list"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:divider="@color/gray"
+        android:dividerHeight="1dp"/>
+</com.daasuu.bl.BubbleLayout>

@@ -1,0 +1,76 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/toolbar_right"
+        android:visibility="visible"/>
+
+    <cn.carbs.android.segmentcontrolview.library.SegmentControlView
+            android:id="@+id/switchMenu"
+            android:layout_below="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            app:scv_FrameWidth="1dp"
+            app:scv_BackgroundNormalColor="@color/white"
+            app:scv_BackgroundSelectedColor="@color/white"
+            app:scv_TextNormalColor="@color/gray_deep"
+            app:scv_TextSelectedColor="@color/colorPrimary"
+            app:scv_FrameColor="@color/white"
+            app:scv_Gradient="true"
+            app:scv_SelectedIndex="0"
+            app:scv_SegmentPaddingVertical="5dp"
+            app:scv_TextArray="@array/message_type"/>
+    <LinearLayout
+        android:id="@+id/lines"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/switchMenu">
+        <View
+            android:id="@+id/leftLines"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"/>
+        <View
+            android:id="@+id/rightLines"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"/>
+    </LinearLayout>
+    <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+             android:id="@+id/swipeToLoadLayout"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/lines">
+
+        <com.iftech.car.widget.RefreshHeaderView
+                android:id="@id/swipe_refresh_header"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="100dp" />
+
+            <com.iftech.car.widget.EmptyRecyclerView
+                    android:id="@+id/swipe_target"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <!--<android.support.v7.widget.RecyclerView-->
+                    <!--android:id="@+id/swipe_target"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"/>-->
+        <com.iftech.car.widget.LoadMoreFooterView
+                android:id="@id/swipe_load_more_footer"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="100dp" />
+
+    </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+    <include
+            android:id="@+id/id_empty_view"
+            layout="@layout/layout_empty_view"/>
+</RelativeLayout>

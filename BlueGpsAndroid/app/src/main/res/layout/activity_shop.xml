@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/layout_myview"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+                android:background="#eeeeee"
+              android:padding="0dp">
+
+    <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar_right"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize">
+        <TextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="@string/save"
+                android:visibility="visible"/>
+
+        <!--自定义toolbar的title 和subtitle -->
+        <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:text="title"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:scrollHorizontally="true"
+                android:textColor="@color/white"
+                android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/allSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+            android:text="全选"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/toolbar_subtitle"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:text="subtitle"
+            android:paddingRight="10dp"
+            android:textSize="14sp"
+            android:layout_gravity="right"
+            android:visibility="gone" />
+
+
+
+    </android.support.v7.widget.Toolbar>
+    <com.iftech.car.widget.MySearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/toolbar_right"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+    </com.iftech.car.widget.MySearchView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView">
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ExpandableListView
+                    android:id="@+id/shop_expandListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:groupIndicator="@null"
+                    android:cacheColorHint="@null"
+                    android:divider="@android:drawable/divider_horizontal_bright"
+                    android:scrollbars="none" />
+            <com.gjiazhe.wavesidebar.WaveSideBar
+                    android:id="@+id/sidebar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="visible"
+                    app:sidebar_max_offset="0dp"
+                    app:sidebar_text_color="@color/colorPrimary"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/ll_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#50323232"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/spinner_0"
+                android:visibility="visible" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:gravity="center_vertical"
+                android:text="正在加载中..."
+                android:textColor="#fff"
+                android:textSize="18dp" />
+    </LinearLayout>
+</RelativeLayout>
